@@ -13,15 +13,15 @@
         <div class="col datiutente">
           <div class="col block">
             <label>Nome Cognome</label>
-            <input type="text" value="">
+            <input id="form-nome" type="text" value="">
           </div>
           <div class="col block">
             <label>Km da percorrere</label>
-            <input type="number" value="">
+            <input id="form-km" type="number" value="">
           </div>
           <div class="col block">
             <label>Fascia Età</label>
-            <select class="" name="sconto">
+            <select id="form-eta" class="" name="sconto">
               <option value="minorenne">Minorenne</option>
               <option value="maggiorenne">Maggiorenne</option>
               <option value="over">Over 65</option>
@@ -29,19 +29,42 @@
           </div>
         </div>
         <div class="col pulsanti">
-          <button>Genera</button>
-          <button>Annulla</button>
+          <button id="form-genera">Genera</button>
+          <button id="form-annulla">Annulla</button>
         </div>
       </div>
 
-      <div class="col rettangolo">
-        <div class="col dettagliopasseggeri">
-          <h4>DETTAGLIO PASSEGGERI</h4>
-          <div class="riepilogo">
-
+      <div class="hidden">
+        <h2>IL TUO BIGLIETTO</h2>
+        <div class="col rettangolo">
+          <div class="col dettagliopasseggeri">
+            <h4>DETTAGLIO PASSEGGERI</h4>
+            <div class="col riepilogo">
+              <div class="col block">
+                <span>NOME PASSEGGERO</span>
+                <span id="bigl-nome">vuoto</span>
+              </div>
+              <div class="col block">
+                <span>Offerta</span>
+                <span id="bigl-offerta">vuoto</span>
+              </div>
+              <div class="col block">
+                <span>Carrozza</span>
+                <span id="bigl-carrozza">vuoto</span>
+              </div>
+              <div class="col block">
+                <span>Codice CP</span>
+                <span id="bigl-codicecp">vuoto</span>
+              </div>
+              <div class="col block">
+                <span>Costo biglietto</span>
+                <span id="bigl-costo">vuoto</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
 
     </div>
 

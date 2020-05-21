@@ -27,6 +27,7 @@ h2 {
 .rettangolo {
   background-color: white;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .datiutente {
@@ -61,4 +62,32 @@ h2 {
   color: #b91450;
   padding: 3px 7px;
   border-radius: 3px;
+}
+.dettagliopasseggeri {
+  padding: 10px 15px 15px 15px;
+}
+.riepilogo {
+  display: flex;
+  border: 1px solid black;
+}
+.riepilogo span {
+  display: block;
+  padding-bottom: 20px;
+}
+.riepilogo .block:first-child {
+  background-color: #808080;
+}
+.riepilogo .block span:first-child {
+  font-weight: bold;
+}
+.riepilogo .block {
+  padding: 10px 5px;
+}
+
+/* Regole display none */
+.hidden {
+
+}
+.visible {
+  
 }
