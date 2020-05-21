@@ -1,0 +1,64 @@
+/* REGOLE RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* [class*= 'col'] {
+  background-color: green;
+  border: 1px solid black;
+} */
+
+body {
+  background-color: #b91450;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  padding: 15px 0;
+}
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.rettangolo {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.datiutente {
+  display: flex;
+  color: #b91450;
+  justify-content: center;
+  padding: 20px 0;
+}
+.block {
+  padding: 0 20px;
+}
+.block label {
+  display: block;
+  text-align: center;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.block input, .block select {
+  border: 1px solid #b91450;
+  border-radius: 3px;
+  text-align: center;
+  padding: 2px 0;
+}
+.block select {
+  background-color: #f8f8f8;
+}
+.pulsanti {
+  text-align: center;
+  padding: 20px 0;
+}
+.pulsanti button {
+  color: #b91450;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
