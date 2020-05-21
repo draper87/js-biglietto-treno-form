@@ -16,6 +16,7 @@ var offertaBiglietto = document.getElementById('bigl-offerta');
 var carrozza = document.getElementById('bigl-carrozza');
 var codiceCP = document.getElementById('bigl-codicecp');
 var costoBiglietto = document.getElementById('bigl-costo');
+var prospetto = document.getElementById('prospetto');
 
 // Creo funzione al click del bottone Genera
 genera.addEventListener('click',
@@ -28,12 +29,35 @@ genera.addEventListener('click',
     offertaBiglietto.innerHTML = 'Offerta Standard';
     carrozza.innerHTML = Math.floor(Math.random()*10);
     codiceCP.innerHTML = Math.floor(Math.random()*10000);
-    costoBiglietto.innerHTML = prezzo * kmPercorsiValue + ' Euro';
+    var prezzoNonArrotondato = prezzo * kmPercorsiValue;
+    var prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
+    costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
     if ( fasciaEtaValue == 'minorenne') {
-      costoBiglietto.innerHTML = prezzoUnder18 * kmPercorsiValue + ' Euro';
+      prezzoNonArrotondato = prezzoUnder18 * kmPercorsiValue;
+      prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
+      costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
+      offertaBiglietto.innerHTML = 'Offerta Under18';
     }
     else if (fasciaEtaValue == 'over') {
-      costoBiglietto.innerHTML = prezzoOver65 * kmPercorsiValue + ' Euro';
+      prezzoNonArrotondato = prezzoOver65 * kmPercorsiValue;
+      prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
+      costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
+      offertaBiglietto.innerHTML = 'Offerta Over 65';
     }
+    prospetto.className = 'visible';
+  }
+)
+// Creo funzione al click del bottone annulla
+annulla.addEventListener('click',
+  function() {
+    nome.value = '';
+    kmPercorsi.value = '';
+    fasciaEta.value = 'minorenne';
+    nomeBiglietto.innerHTML = '';
+    offertaBiglietto.innerHTML = '';
+    carrozza.innerHTML = '';
+    codiceCP.innerHTML = '';
+    costoBiglietto.innerHTML = '';
+    prospetto.className = 'hidden';
   }
 )

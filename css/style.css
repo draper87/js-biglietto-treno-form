@@ -10,10 +10,11 @@
   border: 1px solid black;
 } */
 
+/* REGOLE BODY */
 body {
   background-color: #b91450;
+  font-family: 'Roboto';
 }
-
 h2 {
   text-align: center;
   color: white;
@@ -23,13 +24,11 @@ h2 {
   width: 80%;
   margin: 0 auto;
 }
-
 .rettangolo {
   background-color: white;
   border-radius: 5px;
   margin-bottom: 20px;
 }
-
 .datiutente {
   display: flex;
   color: #b91450;
@@ -62,6 +61,7 @@ h2 {
   color: #b91450;
   padding: 3px 7px;
   border-radius: 3px;
+  border: 1px solid #b91450;
 }
 .dettagliopasseggeri {
   padding: 10px 15px 15px 15px;
@@ -70,9 +70,9 @@ h2 {
   display: flex;
   border: 1px solid black;
 }
-.riepilogo span {
+.riepilogo span:first-child {
   display: block;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 .riepilogo .block:first-child {
   background-color: #808080;
@@ -83,11 +83,13 @@ h2 {
 .riepilogo .block {
   padding: 10px 5px;
 }
-
-/* Regole display none */
+#prospetto .rettangolo {
+  border-radius: 0;
+}
+/* REGOLE DISPLAY NONE */
 .hidden {
-
+  display: none;
 }
 .visible {
-  
+  display: block;
 }
