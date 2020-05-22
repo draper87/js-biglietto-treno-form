@@ -72,5 +72,3 @@ annulla.addEventListener('click',
     prospetto.className = 'hidden';
   }
 )
-
-console.log(Math.random() * -1000);
