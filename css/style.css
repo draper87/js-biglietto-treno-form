@@ -98,3 +98,20 @@ h2 {
 .visible {
   display: block;
 }
+
+@media screen and (max-width: 650px) {
+  .block {
+    padding: 10px 20px;
+  }
+  .datiutente {
+    flex-direction: column;
+    align-items: center;
+  }
+  .riepilogo {
+    flex-direction: column;
+    border: 0;
+  }
+  .riepilogo .block {
+    border: 1px solid black;
+  }
+}
