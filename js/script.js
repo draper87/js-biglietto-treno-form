@@ -17,39 +17,50 @@ var carrozza = document.getElementById('bigl-carrozza');
 var codiceCP = document.getElementById('bigl-codicecp');
 var costoBiglietto = document.getElementById('bigl-costo');
 var prospetto = document.getElementById('prospetto');
+var errore = document.getElementById('errore');
 
 // Creo funzione al click del bottone Genera
 genera.addEventListener('click',
   function() {
-    nomeValue = nome.value;
-    kmPercorsiValue = kmPercorsi.value;
+    kmPercorsiValue = parseInt(kmPercorsi.value);
     fasciaEtaValue = fasciaEta.value;
 
-    nomeBiglietto.innerHTML = nomeValue;
-    offertaBiglietto.innerHTML = 'Offerta Standard';
-    carrozza.innerHTML = Math.floor(Math.random()*10);
-    codiceCP.innerHTML = Math.floor(Math.random()*10000);
-    var prezzoNonArrotondato = prezzo * kmPercorsiValue;
-    var prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
-    costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
-    if ( fasciaEtaValue == 'minorenne') {
-      prezzoNonArrotondato = prezzoUnder18 * kmPercorsiValue;
-      prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
-      costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
-      offertaBiglietto.innerHTML = 'Offerta Under18';
+    // Verifico che gli input siano corretti, in caso negativo do errore, in caso positivo proseguo.
+    if ( isNaN(kmPercorsiValue) || ( nome.value == '' )  ) {
+      errore.innerHTML = 'Inserire Nome e Km da percorrere';
     }
-    else if (fasciaEtaValue == 'over') {
-      prezzoNonArrotondato = prezzoOver65 * kmPercorsiValue;
-      prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
+    else {
+      errore.innerHTML = '';
+      nomeBiglietto.innerHTML = nome.value;
+      offertaBiglietto.innerHTML = 'Offerta Standard';
+      carrozza.innerHTML = Math.floor(Math.random()*10);
+      function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+      }
+      codiceCP.innerHTML = getRndInteger(90000,99999); // mi restituisce un numero da 90000 a 99999
+      var prezzoNonArrotondato = prezzo * kmPercorsiValue;
+      var prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
       costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
-      offertaBiglietto.innerHTML = 'Offerta Over 65';
+      if ( fasciaEtaValue == 'minorenne') {
+        prezzoNonArrotondato = prezzoUnder18 * kmPercorsiValue;
+        prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
+        costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
+        offertaBiglietto.innerHTML = 'Offerta Under18';
+      }
+      else if (fasciaEtaValue == 'over') {
+        prezzoNonArrotondato = prezzoOver65 * kmPercorsiValue;
+        prezzoArrotondato = prezzoNonArrotondato.toFixed(2);
+        costoBiglietto.innerHTML = prezzoArrotondato + ' Euro';
+        offertaBiglietto.innerHTML = 'Offerta Over 65';
+      }
+      prospetto.className = 'visible';
     }
-    prospetto.className = 'visible';
   }
 )
 // Creo funzione al click del bottone annulla
 annulla.addEventListener('click',
   function() {
+    errore.innerHTML = '';
     nome.value = '';
     kmPercorsi.value = '';
     fasciaEta.value = 'minorenne';
@@ -61,3 +72,5 @@ annulla.addEventListener('click',
     prospetto.className = 'hidden';
   }
 )
+
+console.log(Math.random() * -1000);

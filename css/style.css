@@ -86,6 +86,11 @@ h2 {
 #prospetto .rettangolo {
   border-radius: 0;
 }
+#errore {
+  padding-top: 10px;
+  display: block;
+  color: red;
+}
 /* REGOLE DISPLAY NONE */
 .hidden {
   display: none;
